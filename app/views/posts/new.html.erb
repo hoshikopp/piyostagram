@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>投稿する</h1>
+</div>
+
+
+<%= form_with(model:@post, url: confirm_posts_path, method: :post, :multipart => true, class:'form-horizontal',local: true) do |f| %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <div class="form-group">
+          <div class="post_content">
+          <%=f.label :content %>
+          <%=f.text_field :content,class: "form-control content_form"%>
+          </div>
+        </div>
+        <div class="post_image">
+          <div class="field">
+            <%= f.label :image %>
+            <%= f.file_field :image, id: :post_image %>
+            <%= f.hidden_field :image_cache %>
+          </div>
+          <%= f.submit '投稿確認する',class:'btn btn-danger'%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

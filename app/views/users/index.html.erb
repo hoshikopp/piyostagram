@@ -1,0 +1,29 @@
+<h2>ユーザー</h2>
+  <div class="container">
+    <div class="row col-sm-8">
+      <div class="table-responsive">
+        <div class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>email</th>
+            </tr>
+          </thead>
+
+          <div class="user_list">
+            <% @users.each do |user| %>
+              <%if user.id != current_user.id %>
+               <li>
+                 <div class="item">
+                  <%=link_to user.name,user%>
+                  <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post%>
+                 </div>
+               </li>
+               <li><%= render "follow_form", user: user %></li>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

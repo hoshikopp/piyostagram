@@ -1,0 +1,118 @@
+body {
+  width: 980px;
+  height: auto;
+  padding-bottom: 90px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.top{
+  padding-top: 15px;
+}
+
+.page-header{
+  padding-top: 15px;
+}
+
+.post_show{
+  padding-top: 30px;
+}
+.image{
+  height: 200px;
+  width: 300px;
+}
+$bgDefault      : #dd0a96;
+$bgHighlight    : #ec7dcb;
+$colDefault     : #ecf0f1;
+$colHighlight   : #fbb7f6;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            &.divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+.pagination {
+  text-align:center;
+  color: #d4499a;
+  font-size: 18px;
+}
+.pagination a{
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1px solid #d4499a;
+}
+.pagination a:hover{
+  color: white;
+  background: #d4499a;
+}
+.pagination .current{
+  display: inline-block;
+  padding: 10px 28px;
+  background-color: #d4499a;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .09em;
+  border: 1px solid #c5925c;
+}

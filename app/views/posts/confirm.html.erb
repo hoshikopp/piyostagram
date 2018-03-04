@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h2>投稿確認</h2>
+</div>
+<div>
+  <p>内容:<%= @post.content %></p>
+  <p>image:<%= image_tag @post.image %></p>
+</div>
+
+<%= form_tag(posts_path, method: :post, local: true) do%>
+  <%= hidden_field_tag "post[content]",@post.content %>
+  <%= hidden_field_tag :"cache[image]", @post.image.cache_name %>
+  <%= submit_tag "投稿" %>
+<% end %>
