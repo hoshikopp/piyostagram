@@ -82,4 +82,4 @@ production:
   <<: *default
   database: piyostagram_production
   username: piyostagram
-  password: <%= ENV['PIYOSTAGRAM_DATABASE_PASSWORD'] %>
+  password: root

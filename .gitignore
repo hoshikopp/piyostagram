@@ -15,6 +15,7 @@
 
 /node_modules
 /yarn-error.log
+/public/uploads/post/image/*
 
 .byebug_history
 #dotenv-rails
